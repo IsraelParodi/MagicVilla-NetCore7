@@ -1,4 +1,29 @@
 ﻿<Properties StartupConfiguration="{F2BE2839-040B-4DC1-BE1E-BD3A8EA310C9}|https">
-  <MonoDevelop.Ide.ItemProperties.MagicVilla__API FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.MagicVilla__API PreferredExecutionTarget="/Applications/Microsoft Edge.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="MagicVilla_API/Controllers/VillaController.cs">
+    <Files>
+      <File FileName="MagicVilla_API/Program.cs" Line="15" Column="22" />
+      <File FileName="MagicVilla_API/Controllers/VillaController.cs" Line="14" Column="6" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="MagicVilla" expanded="True">
+            <Node name="MagicVilla_API">
+              <Node name="Controllers" expanded="True">
+                <Node name="VillaController.cs" selected="True" />
+              </Node>
+              <Node name="Models" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
 </Properties>

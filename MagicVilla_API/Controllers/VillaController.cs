@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MagicVilla_API.Data;
+using MagicVilla_API.Models;
 using MagicVilla_API.Models.DTO;
 using MagicVilla_API.Utils;
 using Microsoft.AspNetCore.JsonPatch;
@@ -82,6 +83,26 @@ namespace MagicVilla_API.Controllers
             villa.SquareMeter = villaUpdate.SquareMeter;
 
             return Ok(new ApiResponse<VillaDTO>(StatusCodes.Status200OK, $"Villa with Id {id} updated", villa));
+        }
+
+        // PATCH api/villa/1
+        [HttpPatch("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public ActionResult Patch(int id, JsonPatchDocument<VillaDTO> villaPatch)
+        {
+
+            Console.WriteLine(villaPatch.GetType().FullName);
+            Console.WriteLine(villaPatch.ToString());
+            if (id == 0 || villaPatch == null) return BadRequest();
+
+            var villa = VillaStore.villas.FirstOrDefault(v => v.Id == id);
+            if (villa == null) return NotFound();
+
+            villaPatch.ApplyTo(villa, ModelState);
+            if (!ModelState.IsValid) return BadRequest(ModelState);
+
+            return Ok(new ApiResponse<VillaDTO>(StatusCodes.Status200OK, $"Villa with Id {id} updated partially", villa));
         }
 
         // DELETE api/villa/1

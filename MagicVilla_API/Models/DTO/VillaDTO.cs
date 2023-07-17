@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using Newtonsoft.Json;
 
 namespace MagicVilla_API.Models.DTO
 {
@@ -9,7 +10,11 @@ namespace MagicVilla_API.Models.DTO
 
         [Required]
         [MaxLength(30)]
+        [JsonProperty(PropertyName = "name")]
         public required string Name { get; set; }
+
+        public int Occupants { get; set; }
+        public int SquareMeter { get; set; }
     }
 }
 

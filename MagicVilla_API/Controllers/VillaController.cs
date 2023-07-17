@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MagicVilla_API.Data;
-using MagicVilla_API.Models;
 using MagicVilla_API.Models.DTO;
 using MagicVilla_API.Utils;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -67,8 +67,21 @@ namespace MagicVilla_API.Controllers
 
         // PUT api/villa/1
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public ActionResult Put(int id, [FromBody] VillaDTO villaUpdate)
         {
+            if (!ModelState.IsValid) return BadRequest(ModelState);
+            if (id == 0) return BadRequest();
+            var villa = VillaStore.villas.FirstOrDefault(villa => villa.Id == id);
+            if (villa == null) return NotFound();
+
+            villa.Name = villaUpdate.Name;
+            villa.Occupants = villaUpdate.Occupants;
+            villa.SquareMeter = villaUpdate.SquareMeter;
+
+            return Ok(new ApiResponse<VillaDTO>(StatusCodes.Status200OK, $"Villa with Id {id} updated", villa));
         }
 
         // DELETE api/villa/1
@@ -78,6 +91,7 @@ namespace MagicVilla_API.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public ActionResult Delete(int id)
         {
+            if (id == 0) return BadRequest();
             var villa = VillaStore.villas.FirstOrDefault(villa => villa.Id == id);
             if (villa == null) return NotFound();
             VillaStore.villas.Remove(villa);

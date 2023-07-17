@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Net.NetworkInformation;
 using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 
 namespace MagicVilla_API.Utils
 {
@@ -22,10 +23,12 @@ namespace MagicVilla_API.Utils
         public int StatusCode { get; set; }
         public string Message { get; set; }
 
-        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        // Without addNewtonsoft
+        // [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public T? Item { get; set; }
 
-        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public T? Items { get; set; }
     }
 }

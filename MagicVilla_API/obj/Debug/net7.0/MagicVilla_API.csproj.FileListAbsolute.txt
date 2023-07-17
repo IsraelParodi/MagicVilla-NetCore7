@@ -5,8 +5,12 @@
 /Users/israel/Projects/MagicVilla/MagicVilla_API/bin/Debug/net7.0/MagicVilla_API.runtimeconfig.json
 /Users/israel/Projects/MagicVilla/MagicVilla_API/bin/Debug/net7.0/MagicVilla_API.dll
 /Users/israel/Projects/MagicVilla/MagicVilla_API/bin/Debug/net7.0/MagicVilla_API.pdb
+/Users/israel/Projects/MagicVilla/MagicVilla_API/bin/Debug/net7.0/Microsoft.AspNetCore.JsonPatch.dll
+/Users/israel/Projects/MagicVilla/MagicVilla_API/bin/Debug/net7.0/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 /Users/israel/Projects/MagicVilla/MagicVilla_API/bin/Debug/net7.0/Microsoft.AspNetCore.OpenApi.dll
 /Users/israel/Projects/MagicVilla/MagicVilla_API/bin/Debug/net7.0/Microsoft.OpenApi.dll
+/Users/israel/Projects/MagicVilla/MagicVilla_API/bin/Debug/net7.0/Newtonsoft.Json.dll
+/Users/israel/Projects/MagicVilla/MagicVilla_API/bin/Debug/net7.0/Newtonsoft.Json.Bson.dll
 /Users/israel/Projects/MagicVilla/MagicVilla_API/bin/Debug/net7.0/Swashbuckle.AspNetCore.Swagger.dll
 /Users/israel/Projects/MagicVilla/MagicVilla_API/bin/Debug/net7.0/Swashbuckle.AspNetCore.SwaggerGen.dll
 /Users/israel/Projects/MagicVilla/MagicVilla_API/bin/Debug/net7.0/Swashbuckle.AspNetCore.SwaggerUI.dll
